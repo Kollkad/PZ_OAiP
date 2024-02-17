@@ -42,7 +42,8 @@ n = len(soder_int) - 1
 spisok_elem = []
 for i in range(n):
     spisok_elem.append(soder_int[i] * soder_int[n])
-file_2.write(str(spisok_elem) + '\n')
+spisok_elem.append(soder_int[n])
+file_2.write(str(spisok_elem))
 
 
 file_2.close()
