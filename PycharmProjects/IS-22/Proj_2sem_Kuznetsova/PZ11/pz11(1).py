@@ -38,11 +38,12 @@ file_2.write('Сумма элементов:' )
 file_2.write(str(sum(soder_int)) + '\n')
 
 file_2.write('Элементы до n-1 умножены на элемент n:' + '\n')
-for i in range(1, 10):
-    spisok_elem = []
-    for n in range(i):
-        spisok_elem.append(soder_int[i] * soder_int[n])
-    file_2.write(str(spisok_elem) + '\n')
+n = len(soder_int) - 1
+spisok_elem = []
+for i in range(n):
+    spisok_elem.append(soder_int[i] * soder_int[n])
+file_2.write(str(spisok_elem) + '\n')
+
 
 file_2.close()
 
