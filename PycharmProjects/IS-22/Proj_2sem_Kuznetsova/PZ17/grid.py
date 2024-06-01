@@ -1,6 +1,3 @@
-# В соответствии с номером варианта перейти по ссылке на прототип. Реализовать его с применением пакета tk.
-# Получить интерфейс максимально приближенный у оригиналу
-
 from tkinter import *
 from tkinter import ttk
 
@@ -8,13 +5,9 @@ root = Tk()
 root.title('Задача1')
 root.geometry('960x540')
 
-from tkinter import messagebox
-def button_clicked():
-    messagebox.showinfo('Регистрация', 'ПОЗДРАВЛЯЕМ, Вы зарегистрировались!')
-def close():
-    root.destroy()
-    root.quit()
-    print('Закрытие главного окна')
+#Регистрация и настройки
+#register = Label(root, text='Регистрация', fg='#56BAF4', font=('Arial', 20))
+#register.grid(column=0, row=0)
 
 #Окно "создание нового сайта"
 Base = Frame(root, bg='white', bd=5, padx=10, pady=10)
@@ -26,25 +19,25 @@ whit = Frame(Base, bg='white', width=960, height=50)
 whit.pack()
 #сама надпись
 reg = Label(whit, text='Регистрация', bg='white', fg='#56BAF4', font=('Arial', 20))
-reg.place(x=0, y=0)
+reg.grid(row=0, column=0)
 
 #------НовыЙ фрейм sns для надписи-----------
 Sns = Frame(Base, bg='#56BAF4', width=960, height=50)
 Sns.pack()
 #Надпись Создание нового сайта
 sozd = Label(Sns, text='Создание нового сайта', bg='#56BAF4', fg='white', font=('Arial', 18))
-sozd.place(x=330, y=8)
+sozd.grid(row=0, column=0)
 
 #-----------Фрейм для опроса---------------
 opr = Frame(Base, bg='white', width=960, height=140)
 opr.pack()
 #Email
 em = Label(opr, text='Email',  bg='white', fg='#56BAF4', font=('Arial', 8))
-em.place(x=290, y=10)
+em.grid(row=0, column=0)
 emV = Entry(opr, width=40, bd=2)
-emV.place(x=340, y=10)
+emV.grid(row=0, column=1)
 emCB = Checkbutton(opr, bg='white', fg='green', height=1)
-emCB.place(x=590, y=8)
+emCB.grid(row=0, column=3)
 #Пароль
 prl = Label(opr, text='Пароль',  bg='white', fg='#56BAF4', font=('Arial', 8))
 prl.place(x=290, y=35)
@@ -149,9 +142,29 @@ kodb.place(x=370, y=35)
 fin = Frame(Base, bg='white', width=960, height=100)
 fin.pack()
 
-butt = Button(fin, text='Регистрация', command=button_clicked, bg='#56BAF4', fg='white')
+butt = Button(fin, text='Регистрация', command='button_clicked', bg='#56BAF4', fg='white')
 #butt.place(x=290, y=10)
 butt.pack()
+
+
+
+
+#img
+#canvas = Canvas(opr, bg='#0000b3', width=30, height=30)
+#canvas.place(x=400, y=10)
+#canvas.pack()
+#img1 = PhotoImage(file="C:\Документы\PycharmProjects\IS-22\Proj_2sem_Kuznetsova\PZ17\gal.png")
+#itogIMG = canvas.create_image(10, 10, anchor = NW, image = img1)
+#emGal = Label(image=img1)
+#emGal.place(x=450, y=10)
+#emGal.pack()
+
+def button_clicked():
+    print('ПОЗДРАВЛЯЕМ, Вы зарегистрировались!')
+def close():
+    root.destroy()
+    root.quit()
+    print('Закрытие главного окна')
 
 root.protocol('WM_DELETE_WINDOW', close)
 root.mainloop()
